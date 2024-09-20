@@ -25,9 +25,9 @@ export default function SetAvatar() {
   // Redirect to login if user is not logged in
   useEffect(() => {
    
-    if (!localStorage.getItem("chat-app-user")) {
-    navigate("/login");
-    }
+      if (!localStorage.getItem("chat-app-user")) {
+        navigate("/login");
+      }
    
   }, []);
 
