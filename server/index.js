@@ -8,13 +8,13 @@ const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
 
-app.use(cors(
-  {
-    origin: 'https://banter-chat-app.vercel.app',
-    methods: 'GET,POST,PUT,DELETE',
-    credentials: true 
-}
-));
+app.use(cors({
+  origin: ['https://banter-chat-app.vercel.app', 'http://localhost:3000'],
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true 
+}));
+app.options('*', cors());
+
 app.use(express.json());
 
 // Routes
@@ -34,10 +34,11 @@ const server = app.listen(process.env.PORT, () => {
 // Socket.io setup
 const io = socket(server, {
   cors: {
-    origin: "https://banter-chat-app.vercel.app", // Match the frontend's deployed URL
+    origin: ["https://banter-chat-app.vercel.app", "http://localhost:3000"],
     credentials: true,
   },
 });
+
 
 // Global variable for online users
 global.onlineUsers = new Map();
