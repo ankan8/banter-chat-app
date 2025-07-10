@@ -1,38 +1,6 @@
-# Node modules
-**/node_modules/
-
-# Env files
+# Ignore all env files
+.env
+*.env
+.env.*
 **/.env
-
-# Logs
-**/npm-debug.log
-**/yarn-debug.log
-**/yarn-error.log
-
-# Build outputs
-chat-app/build/
-chat-app/dist/
-server/build/
-server/dist/
-
-# OS / Editor junk
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
-
-# Runtime
-*.log
-*.pid
-*.seed
-*.tgz
-
-# Docker
-*.local
-.env.local
-.env.production.local
-docker-compose.override.yml
-
-# Deployment configs (optional)
-fly.toml
-*.swp
+**/*.env
